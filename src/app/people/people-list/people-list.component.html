@@ -1,0 +1,17 @@
+<table class="table table-striped" id="table_id">
+    <thead>
+        <tr style="text-align: center;">                        
+            <th>Nombre</th>
+            <th>Usuario</th>
+            <th>Editar</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr style="text-align: right;" *ngFor="let persona of Personas">            
+            <td style="text-align: left;">{{persona.name}}</td>            
+            <td style="text-align: left;">{{persona.username}}</td> 
+            <td> <a routerLink="/peopleedit/{{ persona.id }}">Configurar</a></td>
+        </tr>
+    </tbody>
+</table>
