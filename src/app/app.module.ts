@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { PeopleListComponent } from './people/people-list/people-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { SharedService } from './shared.service';
+
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,8 +20,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     NgbModule,    
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [SharedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

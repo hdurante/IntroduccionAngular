@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-people-list',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeopleListComponent implements OnInit {
 
-  Personas:any=[]
+  People:any=[];
 
-  constructor() { }
+  constructor(private service:SharedService) { }
 
   ngOnInit(): void {    
-
+    this.obtenerPersonas()
+  }
+  obtenerPersonas(){
+    this.service.getPeopleList().subscribe(data=> {
+      console.log("Se solicita el listado de personas")
+      this.People = data
+    })
   }
 
 }
